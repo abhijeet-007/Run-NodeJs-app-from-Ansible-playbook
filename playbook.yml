@@ -1,0 +1,35 @@
+---
+- name: Deploy Node App on Ubuntu
+  hosts: ec2-server
+  become: yes
+
+  tasks:
+
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install Node.js setup
+      shell: curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+
+    - name: Install Node.js and Git
+      apt:
+        name:
+          - nodejs
+          - git
+        state: present
+
+    - name: Clone repo
+      git:
+        repo: https://github.com/abhijeet-007/Run-NodeJs-app-from-Ansible-playbook.git
+        dest: /home/ubuntu/node-app
+
+    - name: Install dependencies
+      command: npm install
+      args:
+        chdir: /home/ubuntu/node-app
+
+    - name: Start app
+      command: npm start
+      args:
+        chdir: /home/ubuntu/node-app
