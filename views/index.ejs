@@ -5,9 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>NodeJS App | Ansible Deployment</title>
   </head>
   <body>
-    <h1>ECS Project 1</h1>
+    <nav>
+      <span class="logo">⚙️ AnsibleDeploy</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#pipeline">Pipeline</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>NodeJS App</h1>
+      <p>Deployed automatically using <strong>Ansible Playbooks</strong></p>
+      <a href="#about" class="btn">Explore Project</a>
+    </header>
+
+    <section id="about">
+      <h2>About This Project</h2>
+      <p>This project demonstrates how to deploy a Node.js web application on a remote server using Ansible playbooks. The entire deployment process — installing dependencies, configuring the environment, and starting the app — is fully automated.</p>
+    </section>
+
+    <section id="stack">
+      <h2>Tech Stack</h2>
+      <div class="cards">
+        <div class="card">
+          <span>🟢</span>
+          <h3>Node.js</h3>
+          <p>JavaScript runtime for the backend server</p>
+        </div>
+        <div class="card">
+          <span>🎨</span>
+          <h3>EJS</h3>
+          <p>Embedded JS templating for dynamic views</p>
+        </div>
+        <div class="card">
+          <span>📦</span>
+          <h3>Ansible</h3>
+          <p>Automates provisioning and deployment</p>
+        </div>
+        <div class="card">
+          <span>🐧</span>
+          <h3>Linux</h3>
+          <p>Target server running Ubuntu/Amazon Linux</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <h2>Deployment Pipeline</h2>
+      <ol class="steps">
+        <li><strong>Step 1</strong> — Ansible connects to remote host via SSH</li>
+        <li><strong>Step 2</strong> — Installs Node.js &amp; npm on the server</li>
+        <li><strong>Step 3</strong> — Copies app files to the remote machine</li>
+        <li><strong>Step 4</strong> — Runs <code>npm install</code> to install dependencies</li>
+        <li><strong>Step 5</strong> — Starts the app with <code>node index.js</code></li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>Built with Ansible &amp; Node.js &mdash; Project 3</p>
+    </footer>
   </body>
 </html>
